@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        app:constraintSetStart="@id/start"
+        app:constraintSetEnd="@id/mid"
+        app:duration="200">
+
+        <OnSwipe
+            app:touchAnchorId="@id/tick"
+            app:touchAnchorSide="right"
+            app:dragDirection="dragRight"/>
+    </Transition>
+
+    <Transition
+        app:constraintSetStart="@id/mid"
+        app:constraintSetEnd="@id/mid_2"
+        app:duration="200">
+
+        <OnSwipe
+            app:touchAnchorId="@id/tick"
+            app:touchAnchorSide="right"
+            app:dragDirection="dragRight"/>
+    </Transition>
+
+    <Transition
+        app:constraintSetStart="@id/mid_2"
+        app:constraintSetEnd="@id/end"
+        app:duration="200">
+
+        <OnSwipe
+            app:touchAnchorId="@id/tick"
+            app:touchAnchorSide="right"
+            app:dragDirection="dragRight"/>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/tick"
+            android:layout_width="4dp"
+            android:layout_height="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/mid">
+        <Constraint
+            android:id="@id/tick"
+            android:layout_width="4dp"
+            android:layout_height="24dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/part_one"/>
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/mid_2">
+        <Constraint
+            android:id="@id/tick"
+            android:layout_width="4dp"
+            android:layout_height="24dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/part_two"/>
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@id/tick"
+            android:layout_width="4dp"
+            android:layout_height="24dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    </ConstraintSet>
+
+</MotionScene>
